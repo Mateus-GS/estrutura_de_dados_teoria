@@ -90,19 +90,19 @@ public class ListaDuplamenteEncadeada {
     }
 
     //TODO(Criar um método que retorno os dados da lista em ordem inversa)
-    public String ordemInversa(String prev, String next, String current, String inicio) {
-    	    prev = null;
-    	    next = null;
-    	    current = inicio;
-    	    while (current != null) {
-    	        next = current ;
-    	        current.setProx(prev);
-    	        prev = current;
-    	        current = next;
-    	    }
-    	    inicio = prev;
-    	
+    public void ordemInversa() {
 
+        	NoDuplo next = null;
+        	NoDuplo current = primeiro;
+        	NoDuplo prev = null;
+            while (current != null) {
+                next = current.prox;
+                current.prox = prev;
+                prev = current;
+                current = next;
+            }
+            primeiro = prev;
+    
     }
 }
 
